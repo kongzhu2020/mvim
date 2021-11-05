@@ -35,10 +35,13 @@ map sd :set nosplitbelow<CR>:split<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'maralla/completor.vim'
+Plug 'mhinz/vim-startify'
+Plug 'connorholyday/vim-snazzy'
 call plug#end()
 
 " ##### Plug: NERDTree "
 map <silent> <C-e> :NERDTreeToggle<CR>
+
 
 " ##### Plug: completor "
 " Use TAB to complete when typing words, else inserts TABs as usual.  Uses
@@ -69,3 +72,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use tab to trigger auto completion.  Default suggests completions as you type.
 let g:completor_auto_trigger = 1
 inoremap <expr> <Tab> Tab_Or_Complete()
+
+
+" ##### Plug:snazzy "
+colorscheme snazzy
+let g:SnazzyTransparent = 1
