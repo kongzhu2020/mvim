@@ -1,0 +1,49 @@
+let mapleader=" "
+syntax on
+set number
+set norelativenumber
+set cursorline
+set wrap
+set showcmd
+set wildmenu
+
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+
+imap jk <ESC>
+map s :<nop>
+map S :w<CR>
+map Q :q<CR>
+map R :source $MYVIMRC<CR>
+noremap J 5j
+noremap K 5k
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+map sr :set splitright<CR>:vsplit<CR>
+map sl :set nosplitright<CR>:vsplit<CR>
+map su :set nosplitbelow<CR>:split<CR>
+map sd :set nosplitbelow<CR>:split<CR>
+
+map sv <C -w>t<C -w>H
+map sh <C -w>t<C -w>K
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+Plug 'preservim/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'mhinz/vim-startify'
+call plug#end()
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+
+colorscheme snazzy
+let g:SnazzyTransparent = 1
+
